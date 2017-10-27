@@ -37,11 +37,14 @@
   	<bean id="validator"
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 	
-<!-- 
+
+	<!-- <bean id="applicationContextProvider" class="study.fw.core.context.ApplicationContextProvider" /> -->
+	
+	<!-- 컨트롤러 앞단에서 스레드로컬 처리를 위해서 인터셉터로 구현함. --> 
 	<mvc:interceptors>
         <bean class="study.fw.online.context.ContextSettingInterceptor" />
     </mvc:interceptors>
- -->
+
  
 	<mvc:resources mapping="/study-online/resources/**" location="/study-online/resources/" />
 	<mvc:resources mapping="/study-online/message/**" location="classpath:/study-online/message/" />
@@ -54,7 +57,7 @@
 <!-- 	<mvc:default-servlet-handler /> -->
 
 
-	<!-- <bean id="applicationContextProvider" class="study.fw.core.context.ApplicationContextProvider" /> -->
+
 
 	<!-- controller 앞단에 aop를 건 것인데,, http요청이 들어온 것의 정보를 컨텍스트홀더에 넣는 작업을 함. -->
  	<aop:aspectj-autoproxy />
