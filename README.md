@@ -28,7 +28,7 @@ MappingJackson2HttpMessageConverter 는 http 바디부에 있는 Json형태의 �
 
 
 #### *aop:aspectj-autoproxy*
-~~~controller 앞단에 aop를 건 것인데, http요청이 들어온 것의 정보를 컨텍스트홀더에 넣는 작업을 하게 될 것이다.~~~
+controller 앞단에 aop를 건 것인데, http요청이 들어온 것의 정보를 컨텍스트홀더에 넣는 작업을 하게 될 것이다.
 ```
 <aop:aspectj-autoproxy />
 <bean id="controllerClassNameInfo" class="study.fw.online.aspect.StudyControllerClassNameAdvice" />
